@@ -2,5 +2,5 @@
 #include<stdio.h>
 int main()
 {
-Printf(“My name is naseema”);
+printf(“My name is naseema”);
 }
