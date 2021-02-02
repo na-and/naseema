@@ -7,19 +7,16 @@ int input()
     scanf("%d",&a);
     return a;
 }
-
 int find_sum(int a, int b)
 {
     int sum;
     sum = a+b;
     return sum;
 }
-
 void output(int a, int b, int c)
 {
     printf("Sum of %d + %d is %d\n",a,b,c);
 }
-
 int main()
 {
     int o,p,q;
