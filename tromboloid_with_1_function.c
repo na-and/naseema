@@ -8,8 +8,13 @@ float volume(float h ,float d ,float b)
 float main()
 {
    float h,d,b,vol;
-   printf("Enter the height , diameter ,breadth of tromboloid:");
-   scanf("%f%f%f",&h,&d,&b);
+   printf("Enter the height of tromboloid:");
+   scanf("%f",&h);
+   printf("Enter the diameter of tromboloid:");
+   scanf("%f",&d);
+   printf("Enter the breadth of tromboloid:");
+   scanf("%f",&b);
    vol=volume(h,d,b);
    printf("The volume of tromboloid is %2f",vol);
+   return 0;
 }
