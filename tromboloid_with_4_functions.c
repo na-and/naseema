@@ -3,7 +3,6 @@
 float input()
 {
     float number;
-    printf("Enter number");
     scanf("%f", &number);
     return number;
 }
@@ -19,10 +18,14 @@ void display(float vol)
 int main()
 {
      float h1, d1, b1, result;
+     printf("Enter the height of tromboloid:");
      h1=input();
+     printf("Enter the diameter of tromboloid:");
      d1=input();
+     printf("Enter the breadth of tromboloid:");
      b1=input();
      result = ((h1*d1*b1)+(d1/b1))/3;
      display(result);
      return 0;
 }
+
