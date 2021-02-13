@@ -1,29 +1,36 @@
 //WAP to find the distance between two points using structures and 4 functions.
 #include<stdio.h>
 #include<math.h>
-struct Points
+struct Point
 {
     float x,y;
 };
-float distance(struct Points m, struct Points n)
+typedef struct Point values;
+values input()
+{
+     values m;
+     printf("Enter the values with respect to x:");
+     scanf("%f",&m.x);
+     printf("Enter the values with respect to y:");
+     scanf("%f",&m.y);
+     return m;
+}
+float getdistance(values m, values n)
 {
      float result;
      result=sqrt((m.x-n.x)*(m.x-n.x)+(m.y-n.y)*(m.y-n.y));
      return result;
 }
-int main()
+void output(values m,values n,float distance)
 {
-     struct Points m,n;
-     printf("\nEnter the coordinates of point A:\n");
-     printf("\nx-axis coordinate:\t");
-     scanf("%f",&m.x);
-     printf("\ny-axis coordinate:\t");
-     scanf("%f",&m.y);
-     printf("\nEnter the coordinates of point B:\n");
-     printf("\nx-axis coordinate:\t");
-     scanf("%f",&n.x);
-     printf("\ny-axis coordinate:\t");
-     scanf("%f",&n.y);
-     printf("\nDistance between points A and B: %f\n", distance(m,n));
-     return 0;
+    printf("Distance between point m %f %f and point n %f %f is %f\n",m.x,m.y,n.x,n.y, getdistance(m,n));
+}
+float main()
+{
+    values m,n;
+    float q;
+    m=input();
+    n=input();
+    q=getdistance(m,n);
+    output(m,n,q);
 }
