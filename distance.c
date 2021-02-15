@@ -21,8 +21,11 @@ float main()
     float a1,b1,a2,b2,distance;
     printf("Enter the distance between the point:");
     a1=input();
+    printf("Enter the distance between the point:");
     b1=input();
+    printf("Enter the distance between the point:");
     a2=input();
+    printf("Enter the distance between the point:");
     b2=input();
     distance=sqrt((a2-a1)*(a2-a1)+(b2-b1)*(b2-b1));
     display(distance,a1,b1,a2,b2);
