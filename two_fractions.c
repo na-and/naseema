@@ -1,45 +1,46 @@
 //WAP to find the sum of two fractions.
 #include<stdio.h>
-#include<conio.h>
-typedef struct
-     {
-        int num;
-        int deno;
+struct fraction
+{
+     int n , d;
+};
+typedef struct fraction fract;
+fract input()
+{
+    fract f;
+    printf("Enter the numerator:\n");
+    scanf("%d",&f.n);
+    printf("Enter the denominator:\n");
+    scanf("%d",&f.d);
+    return f;
+}
+int gcd(int a , int b)
+{ 
+     if (a == 0)
+        return b;
+    return gcd(b%a, a);
+}   
      
-      }Fract;
- 
-   Fract sum(Fract,Fract);
- float input()
+fract compute_add(fract f1 , fract f2)
 {
-float number;
-scanf("%f",&number);
-return number
-}
-float output(num,deno)
+    fract f3;
+    f3.d = f1.d* f2.d;
+    f3.n = (f1.n)*(f2.d)+(f2.n)*(f1.d);
+    int common_factor = gcd(f3.n,f3.d);
+    f3.d = f3.d/common_factor;
+    f3.n = f3.n/common_factor;
+    return f3;
+}   
+void display(fract f1 , fract f2 , fract f3)
 {
-return ("Result=%d%d",num,deno);  //display the result
+    printf("The addition of %d/%d and %d/%d is %d/%d\n",f1.n,f1.d,f2.n,f2.d,f3.n,f3.d);
 }
-   int main()
-    {
-     int num1,deno1,num2,deno2;
-     printf("Enter fraction 1: numerator denominator:");
- num1 = input();
-deno1=input();
-     printf("Enter fraction 2:numerator denominator:");
- num2=input();
-deno2=input();
-    
-     Fract f1={num1, deno1}; // fraction 1
-     Fract f2 ={num2, deno2};//fraction 2
-     Fract result = sum(f1, f2);//sum the fraction
- display=output(result.num,result.deno);
-printf(display)
-     getch();
-     return 0;
-    }
-   Fract sum(Fract f1, Fract f2)
-    {
-     Fract result={(f1.num * f2.deno) + (f2.num * f1.deno), f1.deno * f2.deno};
-     return result;
- 
-   }
+int main()
+{
+    fract f1,f2,f3;
+    f1 = input();
+    f2 = input();
+    f3 = compute_add(f1,f2);
+    display(f1,f2,f3);
+    return 0;
+}
